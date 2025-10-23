@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Consensia — Multi-role AI Consensus for Software Engineering</title>
-  <meta name="description" content="Consensia is a research project exploring whether an LLM can be a trustworthy judge in software engineering by orchestrating multi-role agents and an evidence-backed meta-evaluator." />
+  <title>Consensia — Multi‑role AI Consensus for Software Engineering</title>
+  <meta name="description" content="Consensia is a research project exploring whether an LLM can be a trustworthy judge in software engineering by orchestrating multi‑role agents and an evidence‑backed meta‑evaluator." />
   <meta name="theme-color" content="#0d0618" />
   <style>
     :root{
@@ -72,6 +72,7 @@
         <a href="#roles">Roles</a>
         <a href="#status">Status</a>
         <a href="#links">Links</a>
+      <a href="#team">Team</a>
       </nav>
     </div>
   </header>
@@ -80,8 +81,8 @@
     <section class="hero">
       <div class="wrap">
         <div class="kicker">Research project</div>
-        <h1>Consensia — Multi-role AI Consensus for Software Engineering</h1>
-        <p class="subtitle">Can a large language model be a trustworthy judge? Consensia explores <strong>stakeholder-aware, evidence-backed consensus</strong> across software engineering tasks — code, diagrams, and architectures — by orchestrating multiple expert personas and a meta-evaluator.</p>
+        <h1>Consensia — Multi‑role AI Consensus for Software Engineering</h1>
+        <p class="subtitle">Can a large language model be a trustworthy judge? Consensia explores <strong>stakeholder‑aware, evidence‑backed consensus</strong> across software engineering tasks — code, diagrams, and architectures — by orchestrating multiple expert personas and a meta‑evaluator.</p>
       </div>
     </section>
 
@@ -89,13 +90,14 @@
       <div class="wrap">
         <h2>Project Aim</h2>
         <p class="lead">We investigate whether an LLM can issue <em>trustworthy, explainable</em> judgments by comparing and scoring multi-agent outputs. Consensia produces a final verdict with rationale, grounded in <strong>tool evidence</strong> (tests, linters, audits) rather than text alone.</p>
+        <p class="lead" style="margin-top:12px;color:#CBBEFF">This work is inspired by our course research on <em>“LLM as a Judge”</em> led by our advisor <strong>Prof. Anıl Koyuncu</strong> at Bilkent University.</p>
       </div>
     </section>
 
     <section id="how">
       <div class="wrap">
         <h2>How it works</h2>
-        <p class="lead">Consensia coordinates multiple expert roles to generate artifacts and critiques, then tasks a meta-judge to score candidates under a rubric. The verdict references <strong>specific evidence</strong> (e.g., tests passed, linter scores, threat findings).</p>
+        <p class="lead">Consensia coordinates multiple expert roles to generate artifacts and critiques, then tasks a meta‑judge to score candidates under a rubric. The verdict references <strong>specific evidence</strong> (e.g., tests passed, linter scores, threat findings).</p>
       </div>
     </section>
 
@@ -116,8 +118,33 @@
     <section id="links">
       <div class="wrap">
         <h2>Links</h2>
-        <p><a href="https://github.com/AmirAhanii/Consensia-webpage">GitHub Repository</a></p>
-        <p><a href="mailto:team@example.com">Contact the Team</a></p>
+        <div class="cards">
+          <div class="card"><h3>GitHub</h3><p><a href="https://github.com/AmirAhanii/Consensia-webpage" aria-label="Repository link">Repository</a></p></div>
+          <div class="card"><h3>Documentation</h3><p><em>Coming soon</em></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="wrap">
+        <h2>Team & Advisor</h2>
+        <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+          <div class="card"><h3>Project Team</h3>
+            <ul style="margin:8px 0 0 18px">
+              <li>Amir hossein Ahani</li>
+              <li>Ahmed Hatem Haikal</li>
+              <li>Türker Köken</li>
+              <li>İrfan Hakan Karakoç</li>
+              <li>Mehmet Hakan Yavuz</li>
+            </ul>
+          </div>
+          <div class="card"><h3>Advisor</h3>
+            <p style="margin:8px 0 0"><strong>Prof. Anıl Koyuncu</strong><br/><span style="opacity:.85">Department of Computer Engineering, Bilkent University</span></p>
+          </div>
+          <div class="card"><h3>Project Roadmap</h3>
+            <p style="margin:8px 0 6px">Research → UI design → Features → LLM self-judging automation → Prototype → Analysis & statistics → Evaluation → MVP → Publication</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>

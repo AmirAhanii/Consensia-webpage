@@ -3,53 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Consensia — Multi‑role AI Consensus for Software Engineering</title>
-  <meta name="description" content="Consensia is a research project exploring whether an LLM can be a trustworthy judge in software engineering by orchestrating multi‑role agents and an evidence‑backed meta‑evaluator." />
+  <title>Consensia — Multi-role AI Consensus for Software Engineering</title>
+  <meta name="description" content="Consensia is a research project exploring whether an LLM can be a trustworthy judge in software engineering by orchestrating multi-role agents and an evidence-backed meta-evaluator." />
   <meta name="theme-color" content="#0d0618" />
   <style>
     :root{
-      /* Purple/Black theme */
-      --bg:#0d0618;           /* page background */
-      --bg-2:#120922;         /* subtle gradient end */
-      --card:#151027;         /* card surfaces */
-      --text:#F5F3FF;         /* primary text (lavender white) */
-      --muted:#C7B8FF;        /* secondary text */
-      --accent:#A78BFA;       /* primary purple */
-      --accent-2:#8B5CF6;     /* deeper purple */
-      --ring:rgba(167,139,250,.45);
-      --ok:#22c55e;--warn:#f59e0b;--danger:#ef4444;
-      --max:1080px;--radius:18px;--shadow:0 10px 35px rgba(0,0,0,.45);
+      --bg:#0d0618;--bg-2:#120922;--card:#151027;--text:#F5F3FF;--muted:#C7B8FF;--accent:#A78BFA;--accent-2:#8B5CF6;--ring:rgba(167,139,250,.45);--max:1080px;--radius:18px;--shadow:0 10px 35px rgba(0,0,0,.45);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg-2)), radial-gradient(1200px 600px at 50% -10%, rgba(167,139,250,.18), transparent);background-blend-mode:normal;color:var(--text);-webkit-font-smoothing:antialiased}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg-2)), radial-gradient(1200px 600px at 50% -10%, rgba(167,139,250,.18), transparent);color:var(--text);-webkit-font-smoothing:antialiased}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
 
-    /* Topbar */
     header.topbar{position:sticky;top:0;backdrop-filter:saturate(160%) blur(8px);background:linear-gradient(180deg,rgba(13,6,24,.92),rgba(13,6,24,.68));border-bottom:1px solid rgba(167,139,250,.25);z-index:20}
     .topbar .inner{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:16px 0}
     .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
     .brand span{font-size:18px}
     nav.nav a{padding:8px 12px;border-radius:12px}
     nav.nav a:hover{background:rgba(167,139,250,.12)}
-
-    /* LOGO */
     .logo{width:40px;height:40px}
     .logo svg{display:block}
 
-    /* Hero */
-    .hero{padding:86px 0 48px;border-bottom:1px solid rgba(167,139,250,.18)}
+    .hero{padding:86px 0 48px;border-bottom:1px solid rgba(167,139,250,.18);text-align:center}
     .kicker{font-size:12px;letter-spacing:.14em;color:#CABDFF;text-transform:uppercase}
     .hero h1{font-size: clamp(30px, 4.5vw, 48px); line-height:1.06;margin:8px 0 12px}
-    .subtitle{font-size: clamp(16px, 2.4vw, 20px);color:#DCD3FF;max-width:860px}
-    .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:linear-gradient(180deg, rgba(167,139,250,.12), rgba(167,139,250,.06));border:1px solid rgba(167,139,250,.35);color:var(--text);text-decoration:none;box-shadow:var(--shadow)}
-    .btn.primary{background:linear-gradient(180deg,#b9a3ff,#8b5cf6);color:#0b0616;border-color:transparent}
-    .btn:hover{filter:brightness(1.05)}
+    .subtitle{font-size: clamp(16px, 2.4vw, 20px);color:#DCD3FF;max-width:860px;margin:0 auto}
 
-    /* Sections */
     section{padding:60px 0}
     h2{font-size: clamp(22px, 3vw, 30px);margin:0 0 12px}
     p.lead{color:#D9D1FF;max-width:920px}
@@ -57,20 +38,9 @@
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px}
     .card{background:linear-gradient(180deg,rgba(38,18,68,.55),rgba(22,12,40,.65));border:1px solid rgba(167,139,250,.22);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
     .card h3{margin:0 0 6px;font-size:18px}
-    .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#EDE9FE;background:rgba(167,139,250,.16);border:1px solid rgba(167,139,250,.35);padding:6px 10px;border-radius:999px}
 
-    /* Feature grid */
-    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
-    .grid .card{height:100%}
-    @media (max-width: 920px){.grid{grid-template-columns:1fr}}
-
-    /* Footer */
-    footer{padding:34px 0;color:#D7CBFF;border-top:1px solid rgba(167,139,250,.2)}
+    footer{padding:34px 0;color:#D7CBFF;border-top:1px solid rgba(167,139,250,.2);text-align:center}
     .tiny{font-size:12px;color:#CFC3FF}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Liberation Mono", Consolas, monospace; font-size: 12px; color:#CCBFFF}
-
-    /* Focus */
-    :focus-visible{outline:3px solid var(--ring);outline-offset:2px;border-radius:12px}
   </style>
 </head>
 <body>
@@ -78,7 +48,6 @@
     <div class="wrap inner">
       <div class="brand" aria-label="Consensia brand">
         <div class="logo" aria-hidden="true">
-          <!-- Inline SVG logo: converging blades to a point (consensus) -->
           <svg viewBox="0 0 64 64" width="40" height="40" role="img" aria-label="Consensia logo">
             <defs>
               <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
@@ -87,16 +56,11 @@
               </linearGradient>
               <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="2" result="b"/>
-                <feMerge>
-                  <feMergeNode in="b"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
             </defs>
-            <!-- Two chevrons converging → consensus point -->
             <path d="M8 18 L28 32 L8 46" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
             <path d="M56 18 L36 32 L56 46" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
-            <!-- Tip / agreement point -->
             <circle cx="32" cy="32" r="3.6" fill="url(#g)"/>
           </svg>
         </div>
@@ -106,7 +70,7 @@
         <a href="#aim">Aim</a>
         <a href="#how">How it works</a>
         <a href="#roles">Roles</a>
-        <a href="#status">Project status</a>
+        <a href="#status">Status</a>
         <a href="#links">Links</a>
       </nav>
     </div>
@@ -116,90 +80,44 @@
     <section class="hero">
       <div class="wrap">
         <div class="kicker">Research project</div>
-        <h1>Consensia — Multi‑role AI Consensus for Software Engineering</h1>
-        <p class="subtitle">Can a large language model be a trustworthy judge? Consensia studies <strong>stakeholder‑aware, evidence‑backed consensus</strong> across software engineering tasks — code, diagrams, and architectures — by orchestrating multiple expert personas (CTO, Architect, Developer, QA, SRE, Security, Product, Finance) and a meta‑evaluator.</p>
-        <div class="cta">
-          <a class="btn primary" href="#aim">Read the Aim</a>
-          <a class="btn" href="#status">See Status</a>
-          <a class="btn" href="#links">GitHub & Docs</a>
-        </div>
+        <h1>Consensia — Multi-role AI Consensus for Software Engineering</h1>
+        <p class="subtitle">Can a large language model be a trustworthy judge? Consensia explores <strong>stakeholder-aware, evidence-backed consensus</strong> across software engineering tasks — code, diagrams, and architectures — by orchestrating multiple expert personas and a meta-evaluator.</p>
       </div>
     </section>
 
     <section id="aim">
       <div class="wrap">
         <h2>Project Aim</h2>
-        <p class="lead">We investigate whether an LLM can issue <em>trustworthy, explainable</em> judgments by comparing and scoring multi‑agent outputs. Consensia produces a final verdict with rationale, grounded in <strong>tool evidence</strong> (tests, linters, audits) rather than text alone.</p>
-        <div class="cards">
-          <div class="card"><h3>Research question</h3><p>Can an LLM reliably evaluate other LLMs’ outputs across software engineering domains, and explain the consensus?</p></div>
-          <div class="card"><h3>Scope</h3><p>Code generation & review, PlantUML/Mermaid diagrams, architectural decisions (ADRs) and trade‑off analysis.</p></div>
-          <div class="card"><h3>Evidence</h3><p>Unit tests, linters, security audits, diagram checks, and capacity estimates are normalized as structured signals for evaluation.</p></div>
-          <div class="card"><h3>Outcome</h3><p>Stakeholder‑aware verdicts (Adopt / Adopt with fixes / Rework) with confidence and highlighted trade‑offs.</p></div>
-        </div>
+        <p class="lead">We investigate whether an LLM can issue <em>trustworthy, explainable</em> judgments by comparing and scoring multi-agent outputs. Consensia produces a final verdict with rationale, grounded in <strong>tool evidence</strong> (tests, linters, audits) rather than text alone.</p>
       </div>
     </section>
 
     <section id="how">
-      <div class="wrap grid">
-        <div>
-          <h2>How it works</h2>
-          <p class="lead">Consensia coordinates multiple expert roles to generate artifacts and critiques, then tasks a meta‑judge to score candidates under a rubric. The verdict references <strong>specific evidence</strong> (e.g., tests passed, linter scores, threat findings).</p>
-          <div class="cards">
-            <div class="card"><h3>1) Generate</h3><p>Role agents (e.g., Developer, Architect) produce code, tests, diagrams, ADRs.</p></div>
-            <div class="card"><h3>2) Verify</h3><p>Sandboxed tools run: unit tests, linters, SCA, diagram lint, capacity checks.</p></div>
-            <div class="card"><h3>3) Judge</h3><p>A rubric‑guided LLM evaluates options using both text and tool signals.</p></div>
-            <div class="card"><h3>4) Consensus</h3><p>Stakeholder weights yield a final verdict with rationale and uncertainty.</p></div>
-          </div>
-        </div>
-        <aside class="card">
-          <h3 style="margin-top:0">At a glance</h3>
-          <ul>
-            <li>Domains: <strong>Code, Diagrams, Architecture</strong></li>
-            <li>Roles: CTO, Architect, Developer, QA, SRE, Security, PM, Finance</li>
-            <li>Evidence: tests, linters, SCA, diagram checks, capacity</li>
-            <li>Output: verdict, confidence, trade‑offs, top issues</li>
-          </ul>
-          <div style="margin-top:10px" class="badge">Status: MVP in development</div>
-        </aside>
+      <div class="wrap">
+        <h2>How it works</h2>
+        <p class="lead">Consensia coordinates multiple expert roles to generate artifacts and critiques, then tasks a meta-judge to score candidates under a rubric. The verdict references <strong>specific evidence</strong> (e.g., tests passed, linter scores, threat findings).</p>
       </div>
     </section>
 
     <section id="roles">
       <div class="wrap">
         <h2>Expert Roles</h2>
-        <p class="lead">Each role applies a tailored rubric. Example dimensions: correctness, security, scalability, reliability, cost, product fit, clarity.</p>
-        <div class="cards">
-          <div class="card"><h3>CTO</h3><p>Strategy, risk, time‑to‑market.</p></div>
-          <div class="card"><h3>Architect</h3><p>Modularity, scalability, reliability, ADRs.</p></div>
-          <div class="card"><h3>Developer</h3><p>Correctness, readability, complexity, tests.</p></div>
-          <div class="card"><h3>QA</h3><p>Coverage, boundary cases, test plans.</p></div>
-          <div class="card"><h3>SRE</h3><p>SLIs/SLOs, capacity, failure modes, ops.</p></div>
-          <div class="card"><h3>Security</h3><p>Threat model, data classes, mitigations.</p></div>
-          <div class="card"><h3>Product</h3><p>Requirements fit, UX impact, scope.</p></div>
-          <div class="card"><h3>Finance</h3><p>Cloud/run cost and licensing trade‑offs.</p></div>
-        </div>
+        <p class="lead">Each role applies a tailored rubric — correctness, scalability, reliability, cost, and clarity — to form a diverse consensus.</p>
       </div>
     </section>
 
     <section id="status">
       <div class="wrap">
         <h2>Project Status</h2>
-        <div class="cards">
-          <div class="card"><h3>MVP</h3><p>Developer, Architect, Security roles; unit tests + linters + SCA; rubric‑guided judge; consensus scoreboard.</p></div>
-          <div class="card"><h3>Next</h3><p>QA/SRE roles, diagram lint, capacity calculator, experiment dashboard.</p></div>
-          <div class="card"><h3>Stretch</h3><p>Weighted consensus by historical accuracy; pairwise critique rounds; public demo.</p></div>
-        </div>
+        <p class="lead">MVP in development with Developer, Architect, and Security roles active. Upcoming: QA, SRE, and visualization dashboard.</p>
       </div>
     </section>
 
     <section id="links">
       <div class="wrap">
         <h2>Links</h2>
-        <div class="cards">
-          <div class="card"><h3>GitHub</h3><p><a href="#" aria-label="Repository link">Repository (coming soon)</a></p></div>
-          <div class="card"><h3>Paper / Docs</h3><p><a href="#" aria-label="Docs link">Documentation (coming soon)</a></p></div>
-          <div class="card"><h3>Contact</h3><p><a href="mailto:team@example.com">team@example.com</a></p></div>
-        </div>
+        <p><a href="https://github.com/AmirAhanii/Consensia-webpage">GitHub Repository</a></p>
+        <p><a href="mailto:team@example.com">Contact the Team</a></p>
       </div>
     </section>
   </main>
@@ -207,12 +125,10 @@
   <footer>
     <div class="wrap">
       <p class="tiny">© <span id="y"></span> Consensia — Research project on trustworthy LLM judgment for software engineering.</p>
-      <p class="mono">Built for GitHub Pages · Single‑file · Purple/Black theme.</p>
     </div>
   </footer>
 
   <script>
-    // Update year
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>

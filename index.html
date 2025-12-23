@@ -67,6 +67,23 @@
     .card:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(0,0,0,.6)}
     .card h3{margin-bottom:8px;color:#E9E4FF}
 
+    .pdf-link{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:16px;background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);
+      border-radius:12px;margin-bottom:12px;transition:all .2s ease;text-decoration:none;
+      color:var(--text);
+    }
+    .pdf-link:hover{
+      background:rgba(167,139,250,.15);border-color:rgba(167,139,250,.35);
+      transform:translateX(4px);
+    }
+    .pdf-link:last-child{margin-bottom:0}
+    .pdf-link span{flex:1;font-weight:500;color:#E9E4FF}
+    .pdf-link .pdf-badge{
+      background:rgba(167,139,250,.2);color:var(--accent);padding:4px 10px;
+      border-radius:6px;font-size:12px;font-weight:600;margin-left:12px;
+    }
+
     footer{padding:40px 0;text-align:center;color:#cfc3ff;border-top:1px solid rgba(167,139,250,.2)}
 
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -119,6 +136,7 @@
       <nav>
         <a href="#overview">Overview</a>
         <a href="#prototype">Prototype & Approach</a>
+        <a href="#reports">Project Reports</a>
         <a href="#team">Team</a>
       </nav>
     </div>
@@ -163,9 +181,36 @@
       </div>
     </section>
 
+    <section id="reports">
+      <div class="wrap">
+        <h2>Project Reports</h2>
+        <p class="lead" style="margin-bottom:28px">
+          Official documentation submitted so far.
+        </p>
+        <div style="max-width:800px">
+          <a href="assets/CS491_Project_Information_Form (2).pdf" target="_blank" class="pdf-link">
+            <span>Project Information Form</span>
+            <span class="pdf-badge">PDF</span>
+          </a>
+          <a href="assets/Assessment_Innovation_Expert.pdf" target="_blank" class="pdf-link">
+            <span>Assessment of Innovation Form</span>
+            <span class="pdf-badge">PDF</span>
+          </a>
+          <a href="assets/T2526_Project_Specification_Document.pdf" target="_blank" class="pdf-link">
+            <span>Project Specification Document</span>
+            <span class="pdf-badge">PDF</span>
+          </a>
+          <a href="assets/T2526_Analysis_and_Requirements_Report.docx.pdf" target="_blank" class="pdf-link">
+            <span>Analysis and Requirements Report</span>
+            <span class="pdf-badge">PDF</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="team">
       <div class="wrap">
-        <h2>Team & Advisor</h2>
+        <h2>Team & Advisors</h2>
         <div class="cards">
           <div class="card">
             <h3>Project Team</h3>
@@ -178,8 +223,16 @@
             </ul>
           </div>
           <div class="card">
+            <h3>Supervisors</h3>
+            <p><strong>Mert Bıçakçı</strong><br><strong>İlker Burak Kurt</strong></p>
+          </div>
+          <div class="card">
             <h3>Advisor</h3>
             <p><strong>Prof. Anıl Koyuncu</strong><br>Department of Computer Engineering<br>Bilkent University</p>
+          </div>
+          <div class="card">
+            <h3>Innovation Expert</h3>
+            <p><strong>Haluk Altunel</strong></p>
           </div>
           <div class="card">
             <h3>Project Roadmap</h3>

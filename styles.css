@@ -434,6 +434,39 @@ p{
   transform:scale(1.05);
 }
 
+/* GitHub Button */
+.github-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 24px;
+  background:linear-gradient(135deg, rgba(167,139,250,.15), rgba(139,92,246,.15));
+  border:1px solid rgba(167,139,250,.3);
+  border-radius:12px;
+  color:var(--text);
+  font-weight:600;
+  font-size:16px;
+  text-decoration:none;
+  transition:all .3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:0 4px 12px rgba(167,139,250,.1);
+}
+
+.github-button:hover{
+  background:linear-gradient(135deg, rgba(167,139,250,.25), rgba(139,92,246,.25));
+  border-color:rgba(167,139,250,.5);
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(167,139,250,.25);
+  text-decoration:none;
+}
+
+.github-button svg{
+  transition:transform .3s ease;
+}
+
+.github-button:hover svg{
+  transform:scale(1.1) rotate(5deg);
+}
+
 /* Footer */
 footer{
   padding:40px 0;

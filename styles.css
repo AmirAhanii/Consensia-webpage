@@ -381,11 +381,14 @@ p{
 }
 
 .pdf-link span{
+  position:relative;
+  z-index:1;
+}
+
+.pdf-link span:first-child{
   flex:1;
   font-weight:500;
   color:#E9E4FF;
-  position:relative;
-  z-index:1;
 }
 
 .pdf-badge{
@@ -449,7 +452,6 @@ footer{
   0%, 100%{ transform:translate(0, 0) scale(1); }
   50%{ transform:translate(30px, -30px) scale(1.1); }
 }
-
 /* Mobile */
 @media (max-width: 640px){
   .wrap{ padding:0 16px; }
